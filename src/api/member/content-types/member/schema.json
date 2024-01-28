@@ -1,0 +1,190 @@
+{
+  "kind": "collectionType",
+  "collectionName": "members",
+  "info": {
+    "singularName": "member",
+    "pluralName": "members",
+    "displayName": "Members",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "prefix": {
+      "type": "enumeration",
+      "enum": [
+        "Mr",
+        "Master",
+        "Miss",
+        "Mrs",
+        "Ms",
+        "Mx"
+      ]
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "middleName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "suffix": {
+      "type": "string"
+    },
+    "preferredName": {
+      "type": "string"
+    },
+    "nickname": {
+      "type": "string"
+    },
+    "class": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "Alabama",
+        "Alaska",
+        "Arizona",
+        "Arkansas",
+        "California",
+        "Colorado",
+        "Connecticut",
+        "Delaware",
+        "Florida",
+        "Georgia",
+        "Hawaii",
+        "Idaho",
+        "Illinois",
+        "Indiana",
+        "Iowa",
+        "Kansas",
+        "Kentucky",
+        "Louisiana",
+        "Maine",
+        "Maryland",
+        "Massachusetts",
+        "Michigan",
+        "Minnesota",
+        "Mississippi",
+        "Missouri",
+        "Montana",
+        "Nebraska",
+        "Nevada",
+        "New Hampshire",
+        "New Jersey",
+        "New Mexico",
+        "New York",
+        "North Carolina",
+        "North Dakota",
+        "Ohio",
+        "Oklahoma",
+        "Oregon",
+        "Pennsylvania",
+        "Rhode Island",
+        "South Carolina",
+        "South Dakota",
+        "Tennessee",
+        "Texas",
+        "Utah",
+        "Vermont",
+        "Virginia",
+        "Washington",
+        "West Virginia",
+        "Wisconsin",
+        "Wyoming"
+      ]
+    },
+    "zip": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "altEmail": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "altPhone": {
+      "type": "string"
+    },
+    "major": {
+      "type": "string"
+    },
+    "occupationTitle": {
+      "type": "string"
+    },
+    "occupationEmployer": {
+      "type": "string"
+    },
+    "usService": {
+      "type": "string"
+    },
+    "lost": {
+      "type": "boolean",
+      "default": false
+    },
+    "dead": {
+      "type": "boolean",
+      "default": false
+    },
+    "deathDate": {
+      "type": "date"
+    },
+    "obitUrl": {
+      "type": "string"
+    },
+    "hrog": {
+      "type": "boolean",
+      "default": false
+    },
+    "hrogDate": {
+      "type": "date"
+    },
+    "nhqId": {
+      "type": "string"
+    },
+    "initiation": {
+      "type": "date"
+    },
+    "pin": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "spouse": {
+      "type": "string"
+    },
+    "children": {
+      "type": "string"
+    },
+    "littleBrothers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::member.member",
+      "mappedBy": "bigBrother"
+    },
+    "bigBrother": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::member.member",
+      "inversedBy": "littleBrothers"
+    }
+  }
+}
