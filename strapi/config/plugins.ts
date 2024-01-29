@@ -19,7 +19,7 @@ export default ({ env }) => {
           apiKey: env("SENDGRID_API_KEY"),
         },
         settings: {
-          defaultFrom: "admin@pktphichapter.org",
+          defaultFrom: env("SENDGRID_EMAIL"),
           defaultReplyTo: "no-reply@pktphichapter.org",
         },
       },
