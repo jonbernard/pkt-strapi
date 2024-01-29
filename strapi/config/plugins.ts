@@ -12,6 +12,18 @@ export default ({ env }) => {
   const cloudinary = getUploadCreds(env("CLOUDINARY_URL"));
 
   return {
+    email: {
+      config: {
+        provider: "sendgrid",
+        providerOptions: {
+          apiKey: env("SENDGRID_API_KEY"),
+        },
+        settings: {
+          defaultFrom: "admin@pktphichapter.org",
+          defaultReplyTo: "no-reply@pktphichapter.org",
+        },
+      },
+    },
     documentation: {
       config: {
         "x-strapi-config": {
@@ -28,6 +40,7 @@ export default ({ env }) => {
     "strapi-plugin-lottie": {
       enabled: true,
     },
+
     upload: {
       config: {
         provider: "cloudinary",
