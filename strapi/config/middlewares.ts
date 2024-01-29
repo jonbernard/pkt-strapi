@@ -14,6 +14,7 @@ export default [
             "blob:",
             "market-assets.strapi.io",
             "res.cloudinary.com",
+            "*.lottiefiles.com",
           ],
           "media-src": [
             "'self'",
@@ -21,6 +22,7 @@ export default [
             "blob:",
             "market-assets.strapi.io",
             "res.cloudinary.com",
+            "*.lottiefiles.com",
           ],
           upgradeInsecureRequests: null,
         },

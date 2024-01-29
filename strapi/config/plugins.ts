@@ -12,7 +12,20 @@ export default ({ env }) => {
   const cloudinary = getUploadCreds(env("CLOUDINARY_URL"));
 
   return {
+    documentation: {
+      config: {
+        "x-strapi-config": {
+          plugins: ["menus", "upload", "users-permissions"],
+        },
+      },
+    },
     "import-export-entries": {
+      enabled: true,
+    },
+    redirects: {
+      enabled: true,
+    },
+    "strapi-plugin-lottie": {
       enabled: true,
     },
     upload: {
