@@ -1,3 +1,4 @@
+import { APIResponseCollection } from "@/types/types";
 import Image from "next/image";
 
 export default async function Home() {
@@ -8,7 +9,8 @@ export default async function Home() {
     },
     next: { revalidate: 300 },
   });
-  const data = await response.json();
+  const data: APIResponseCollection<"api::member.member"> =
+    await response.json();
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
