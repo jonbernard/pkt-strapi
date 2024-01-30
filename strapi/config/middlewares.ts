@@ -1,4 +1,5 @@
 export default [
+  { resolve: "./src/middlewares/admin-redirect" },
   "strapi::logger",
   "strapi::errors",
   {
