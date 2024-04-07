@@ -40,7 +40,13 @@ export default ({ env }) => {
     "strapi-plugin-lottie": {
       enabled: true,
     },
-
+    "users-permissions": {
+      config: {
+        jwt: {
+          expiresIn: "30d",
+        },
+      },
+    },
     upload: {
       config: {
         provider: "cloudinary",

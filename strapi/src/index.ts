@@ -14,5 +14,16 @@ export default {
    * This gives you an opportunity to set up your data model,
    * run jobs, or perform some special logic.
    */
-  bootstrap(/*{ strapi }*/) {},
+  bootstrap({ strapi }) {
+    strapi?.db?.lifecycles.subscribe({
+      models: ["admin::user"],
+      async afterCreate(event: any) {
+        const { registrationToken } = event?.result;
+        if (!registrationToken) return;
+
+        console.log("JB | afterCreate | result393839:", event.result);
+        // Email invite logic goes here
+      },
+    });
+  },
 };
