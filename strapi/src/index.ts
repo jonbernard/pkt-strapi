@@ -1,3 +1,7 @@
+import sendgrid from "@sendgrid/mail";
+
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+
 export default {
   /**
    * An asynchronous register function that runs before
@@ -18,11 +22,21 @@ export default {
     strapi?.db?.lifecycles.subscribe({
       models: ["admin::user"],
       async afterCreate(event: any) {
-        const { registrationToken } = event?.result;
-        if (!registrationToken) return;
+        const { email } = event?.result;
 
-        console.log("JB | afterCreate | result393839:", event.result);
-        // Email invite logic goes here
+        sendgrid.send({
+          from: process.env.SENDGRID_EMAIL,
+          templateId: "d-7e0661d4b04047e0b66ed20c2dac13d2",
+          personalizations: [
+            {
+              to: { email },
+              dynamicTemplateData: {
+                ...event?.result,
+                url: process.env.PUBLIC_URL,
+              },
+            },
+          ],
+        });
       },
     });
   },
