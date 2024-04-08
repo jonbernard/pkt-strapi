@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <AnimatePresence>
       <div className="min-h-[100vh] sm:min-h-screen w-screen flex flex-col relative bg-[#F2F3F5] font-inter overflow-hidden">
-        <main className="flex flex-col justify-center h-[90%] static md:fixed w-screen overflow-hidden grid-rows-[1fr_repeat(3,auto)_1fr] z-[100] pt-[30px] pb-[320px] px-4 md:px-20 md:py-0">
+        <main className="flex flex-col justify-center h-[90%] static md:fixed w-screen px-4 md:px-20 md:py-0 z-10">
           <motion.div
             transition={{
               duration: 1,
@@ -52,7 +52,7 @@ export default function Home() {
               duration: 0.95,
               ease: [0.165, 0.84, 0.44, 1],
             }}
-            className="relative md:ml-[-10px] md:mb-[37px] font-extrabold text-[12vw] md:text-[84px] font-inter text-[#1E2B3A] leading-[0.9] tracking-[-2px] z-[100]"
+            className="relative md:ml-[-10px] md:mb-[37px] font-extrabold text-[12vw] md:text-[84px] font-inter text-[#1E2B3A] leading-[0.9] tracking-[-2px] z-[100] md:max-w-[70%]"
           >
             Second Century Fund
           </motion.h1>
@@ -166,7 +166,7 @@ export default function Home() {
           </motion.div>
         </motion.div>
 
-        <div className="h-[60px] bg-grey-dark fixed bottom-0 z-20 w-full flex flex-row items-center justify-evenly">
+        <div className="h-[60px] bg-grey-dark fixed bottom-0 z-50 w-full flex flex-row items-center justify-evenly">
           {years && (
             <p className="text-white/80 text-base md:text-lg font-semibold md:leading-[60px] whitespace-nowrap flex flex-row">
               {`Making Good Men Better for ${years} years`}
